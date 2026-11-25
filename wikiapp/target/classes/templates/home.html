@@ -1,0 +1,23 @@
+<!-- Name: Yu Leiye | Student ID: S1580814 -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki - Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="home-container">
+        <div class="home-card">
+            <div class="logo-icon" style="background: linear-gradient(135deg, #10b981, #059669);">✓</div>
+            <h1>Welcome, <span th:text="${username}">User</span>!</h1>
+            <p class="subtitle" style="margin-bottom: 30px;">You have successfully logged into Wiki.</p>
+            <a th:href="@{/logout}" class="btn-logout">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- Name: Yu Leiye | Student ID: S1580814 -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki - Sign In Error</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="login-container">
+        <div class="login-card error-card">
+            <div class="error-icon">!</div>
+            <h1>Unable to sign in</h1>
+            <p>The username or password you entered is incorrect.<br>Please check your credentials and try again.</p>
+            <a th:href="@{/}" class="btn-login btn-retry">Back to sign in</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!-- Name: Yu Leiye | Student ID: S1580814 -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki - Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="login-container">
+        <div class="login-card">
+            <div class="logo-icon">W</div>
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Sign in to continue to Wiki</p>
+
+            <div class="message error" th:if="${error != null}" th:text="${error}"></div>
+
+            <form th:action="@{/login}" method="post">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" 
+                           placeholder="Enter your username" required autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="password-wrap">
+                        <input type="password" id="password" name="password" 
+                               placeholder="Enter your password" required>
+                        <button type="button" class="toggle-pw" id="togglePw">SHOW</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">Sign In</button>
+            </form>
+
+            <p class="help-link">
+                <a th:href="@{/login-error}">View separate error page</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="/js/login.js"></script>
+</body>
+</html>

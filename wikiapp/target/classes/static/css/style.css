@@ -1,0 +1,155 @@
+/* Name: Yu Leiye | Student ID: S1580814 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg-color: #0f172a;
+    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --input-bg: rgba(15, 23, 42, 0.6);
+    --input-border: #334155;
+    --error-color: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+    opacity: 0.6;
+}
+.orb-1 {
+    width: 400px; height: 400px;
+    background: #4f46e5;
+    top: -100px; left: -100px;
+}
+.orb-2 {
+    width: 300px; height: 300px;
+    background: #9333ea;
+    bottom: -50px; right: -50px;
+}
+
+.login-container, .home-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+}
+
+.login-card, .home-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo-icon {
+    width: 64px; height: 64px;
+    margin: 0 auto 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+h1 { font-size: 24px; font-weight: 600; margin-bottom: 8px; }
+.subtitle { color: var(--text-secondary); font-size: 14px; margin-bottom: 30px; }
+
+.input-group { text-align: left; margin-bottom: 20px; }
+.input-group label {
+    display: block; margin-bottom: 8px; font-size: 13px; font-weight: 600; color: var(--text-secondary);
+}
+.input-group input {
+    width: 100%; padding: 12px 16px;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.password-wrap { position: relative; }
+.toggle-pw {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--text-secondary);
+    cursor: pointer; font-size: 12px; font-weight: 600;
+}
+.toggle-pw:hover { color: var(--text-primary); }
+
+.btn-login, .btn-logout {
+    width: 100%; padding: 14px;
+    background: var(--primary-color);
+    color: white; border: none; border-radius: 8px;
+    font-size: 16px; font-weight: 600;
+    cursor: pointer; transition: all 0.2s;
+    margin-top: 10px;
+    text-decoration: none; display: inline-block;
+}
+.btn-login:hover, .btn-logout:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+
+.message.error {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--error-color);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 14px;
+}
+
+.help-link { margin-top: 20px; font-size: 13px; }
+.help-link a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+.help-link a:hover { color: var(--primary-color); }
+
+.error-card { border-top: 4px solid var(--error-color); }
+.error-icon {
+    width: 50px; height: 50px; margin: 0 auto 20px;
+    background: rgba(239, 68, 68, 0.1); color: var(--error-color);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: bold;
+}
+.error-card h1 { color: var(--error-color); }
+.error-card p { color: var(--text-secondary); margin-bottom: 25px; line-height: 1.5; }
+.btn-retry { width: auto; padding: 12px 30px; }
